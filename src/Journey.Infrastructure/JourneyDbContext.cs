@@ -11,5 +11,12 @@ namespace Journey.Infrastructure
         {
             optionsBuilder.UseSqlite("Data Source=C:\\Users\\Gabriel\\Documents\\Github\\C#\\nlw-journey-c-sharp\\src\\Journey.Infrastructure\\DataBase\\JourneyDatabase.db");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Activity>().ToTable("Activities");
+        }
     }
 }
